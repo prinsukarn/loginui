@@ -3,6 +3,7 @@
     "@expo/metro-runtime": "^3.1.1",
     "expo": "^51.0.0",
     "expo-status-bar": "~1.12.1",
+    "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.1",
@@ -10,7 +11,8 @@
     "react-native-web": "~0.19.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.3"
+    "@babel/core": "^7.19.3",
+    "tailwindcss": "^3.3.2"
   },
   "name": "login",
   "version": "1.0.0",
