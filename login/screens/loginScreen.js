@@ -7,6 +7,12 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
+import Animated, {
+  FadeIn,
+  FadeInDown,
+  FadeInUp,
+  FadeOut,
+} from "react-native-reanimated";
 
 export default function LoginScreen() {
   return (
@@ -20,11 +26,13 @@ export default function LoginScreen() {
 
       {/* Lights */}
       <View className="flex-row justify-around w-full absolute">
-        <Image
+        <Animated.Image
+          entering={FadeInUp.delay(200).duration(1000).springify()}
           className="h-[200] w-[80]"
           source={require("../assets/images/light.png")}
         />
-        <Image
+        <Animated.Image
+          entering={FadeInUp.delay(400).duration(1000).springify()}
           className="h-[160] w-[65]"
           source={require("../assets/images/light.png")}
         />
@@ -33,38 +41,53 @@ export default function LoginScreen() {
       {/* Title */}
       <View className="h-full w-full flex justify-around pt-40 pb-10">
         <View className="flex items-center">
-          <Text className="text-white font-bold tracking-wider text-4xl">
+          <Animated.Text
+            entering={FadeInUp.duration(1000).springify()}
+            className="text-white font-bold tracking-wider text-4xl"
+          >
             Login
-          </Text>
+          </Animated.Text>
         </View>
 
         {/* Form */}
         <View className="flex items-center mx-4 space-y-4">
-          <View className="bg-black/5 p-5 rounded-2xl w-full mb-3">
+          <Animated.View
+            entering={FadeInDown.duration(1000).springify()}
+            className="bg-black/5 p-5 mt-4 rounded-2xl w-full mb-3"
+          >
             <TextInput placeholder="Email" placeholderTextColor={"gray"} />
-          </View>
-          <View className="bg-black/5 p-5 rounded-2xl w-full mb-3">
+          </Animated.View>
+          <Animated.View
+            entering={FadeInDown.delay(200).duration(1000).springify()}
+            className="bg-black/5 p-5 rounded-2xl w-full mb-3"
+          >
             <TextInput
               placeholder="Password"
               secureTextEntry
               placeholderTextColor={"gray"}
             />
-          </View>
+          </Animated.View>
 
           {/* Login Button */}
-          <View className="w-full">
+          <Animated.View
+            entering={FadeInDown.delay(400).duration(1000).springify()}
+            className="w-full"
+          >
             <TouchableOpacity className="w-full mb-3 bg-sky-400 p-3 rounded-2xl">
               <Text className="text-xl text-white text-center">Login</Text>
             </TouchableOpacity>
-          </View>
+          </Animated.View>
 
           {/* Sign up Link */}
-          <View className="flex-row justify-center">
+          <Animated.View
+            entering={FadeInDown.delay(600).duration(1000).springify()}
+            className="flex-row justify-center"
+          >
             <Text>Don't have an account? </Text>
             <TouchableOpacity>
               <Text className="text-sky-600">SignUp</Text>
             </TouchableOpacity>
-          </View>
+          </Animated.View>
         </View>
       </View>
     </View>
