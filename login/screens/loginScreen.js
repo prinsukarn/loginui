@@ -13,8 +13,10 @@ import Animated, {
   FadeInUp,
   FadeOut,
 } from "react-native-reanimated";
+import { useNavigation } from "@react-navigation/native";
 
 export default function LoginScreen() {
+  const navigation = useNavigation();
   return (
     <View className="bg-white h-full w-full">
       <StatusBar style="light" />
@@ -84,8 +86,8 @@ export default function LoginScreen() {
             className="flex-row justify-center"
           >
             <Text>Don't have an account? </Text>
-            <TouchableOpacity>
-              <Text className="text-sky-600">SignUp</Text>
+            <TouchableOpacity onPress={() => navigation.push("Signup")}>
+              <Text className="text-sky-600">Signup</Text>
             </TouchableOpacity>
           </Animated.View>
         </View>
