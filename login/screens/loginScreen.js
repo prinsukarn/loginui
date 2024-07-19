@@ -30,6 +30,7 @@ export default function LoginScreen() {
         />
       </View>
 
+      {/* Title */}
       <View className="h-full w-full flex justify-around pt-40 pb-10">
         <View className="flex items-center">
           <Text className="text-white font-bold tracking-wider text-4xl">
@@ -37,6 +38,7 @@ export default function LoginScreen() {
           </Text>
         </View>
 
+        {/* Form */}
         <View className="flex items-center mx-4 space-y-4">
           <View className="bg-black/5 p-5 rounded-2xl w-full mb-3">
             <TextInput placeholder="Email" placeholderTextColor={"gray"} />
@@ -48,11 +50,15 @@ export default function LoginScreen() {
               placeholderTextColor={"gray"}
             />
           </View>
+
+          {/* Login Button */}
           <View className="w-full">
             <TouchableOpacity className="w-full mb-3 bg-sky-400 p-3 rounded-2xl">
               <Text className="text-xl text-white text-center">Login</Text>
             </TouchableOpacity>
           </View>
+
+          {/* Sign up Link */}
           <View className="flex-row justify-center">
             <Text>Don't have an account? </Text>
             <TouchableOpacity>
