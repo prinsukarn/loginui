@@ -53,6 +53,12 @@ export default function LoginScreen() {
               <Text className="text-xl text-white text-center">Login</Text>
             </TouchableOpacity>
           </View>
+          <View className="flex-row justify-center">
+            <Text>Don't have an account? </Text>
+            <TouchableOpacity>
+              <Text className="text-sky-600">SignUp</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>
